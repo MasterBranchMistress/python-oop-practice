@@ -38,3 +38,16 @@ archer1.attack()
 archer1.attack()
 wizard1.attack()
 wizard1.attack()
+
+print(isinstance(wizard1, User))  # True
+print(isinstance(archer1, User))  # True
+print(isinstance(wizard1, Archer))  # False
+
+def player_attack(player):
+    player.attack()
+
+player_attack(wizard1)  # Attacking with power of 30
+player_attack(archer1)  # Attacking with arrows: 8
+
+for char in [wizard1, archer1]:
+    char.attack()  # Attacking with power of 10, Attacking with arrows: 7
