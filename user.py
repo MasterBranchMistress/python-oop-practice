@@ -1,5 +1,8 @@
 class User():
     logged_in = False
+    def __init__(self, email):
+        self.email = email
+
     def sign_in(self):
         if not self.logged_in:
             self.logged_in = True
@@ -8,7 +11,8 @@ class User():
             self.logged_in = False
         
 class Wizard(User):
-    def __init__(self, name, power):
+    def __init__(self, name, power, email):
+        super().__init__(email)
         self.name = name
         self.power = power
 
@@ -20,7 +24,8 @@ class Wizard(User):
             print("Need to sign in first")
 
 class Archer(User):
-    def __init__(self, name, arrows):
+    def __init__(self, name, arrows, email):
+        super().__init__(email)
         self.name = name
         self.arrows = arrows
 
@@ -30,9 +35,9 @@ class Archer(User):
             self.arrows -= 1
         else:
             print("Need to sign in first")
-wizard1 = Wizard("Merlin", 50)
+wizard1 = Wizard("Merlin", 50, "merlin@example.com")
 wizard1.sign_in()
-archer1 = Archer("Robin", 10)
+archer1 = Archer("Robin", 10, "robin@example.com")
 archer1.sign_in()
 archer1.attack()
 archer1.attack()
