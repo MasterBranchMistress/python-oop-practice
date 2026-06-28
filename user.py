@@ -56,3 +56,10 @@ player_attack(archer1)  # Attacking with arrows: 8
 
 for char in [wizard1, archer1]:
     char.attack()  # Attacking with power of 10, Attacking with arrows: 7
+
+# class HybridBorg(Wizard, Archer):
+#     def __init__(self, name, power, arrows, email):
+#         Wizard.__init__(self, name, power, email)
+#         Archer.__init__(self, name, arrows, email)
+
+# zdborg = HybridBorg("Ziodborg", 100, 50, "hybrid@gmail.com")
