@@ -18,7 +18,23 @@ class Wizard(User):
             self.power -= 20
         else:
             print("Need to sign in first")
+
+class Archer(User):
+    def __init__(self, name, arrows):
+        self.name = name
+        self.arrows = arrows
+
+    def attack(self):
+        if self.logged_in:
+            print(f"Attacking with arrows: {self.arrows}")
+            self.arrows -= 1
+        else:
+            print("Need to sign in first")
 wizard1 = Wizard("Merlin", 50)
-# wizard1.sign_in()
+wizard1.sign_in()
+archer1 = Archer("Robin", 10)
+archer1.sign_in()
+archer1.attack()
+archer1.attack()
 wizard1.attack()
 wizard1.attack()
